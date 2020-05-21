@@ -1,0 +1,45 @@
+{
+  "npmScope": "myorg",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "./extension",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "bucket": {
+          "url": "http://localhost:3333/api"
+        }
+      }
+    }
+  },
+  "projects": {
+    "todos": {
+      "tags": []
+    },
+    "todos-e2e": {
+      "tags": [],
+      "implicitDependencies": ["todos"]
+    },
+    "api": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    },
+    "nx-cloud-onprem": {
+      "tags": []
+    }
+  }
+}

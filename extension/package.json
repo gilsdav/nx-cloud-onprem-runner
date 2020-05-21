@@ -1,0 +1,40 @@
+{
+    "name": "nx-cloud-onprem-runner",
+    "version": "1.0.0",
+    "description": "Remote caching for @nrwl/nx using on premise server",
+    "main": "nx-cloud-onprem-client.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gilsdav/nx-cloud-onprem-runner.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gilsdav/nx-cloud-onprem-runner/issues"
+    },
+    "homepage": "https://github.com/gilsdav/nx-cloud-onprem-runner#readme",
+    "devDependencies": {
+        "@nrwl/workspace": "^9.2.2",
+        "@types/yargs": "^15.0.4",
+        "typescript": "^3.8.3"
+    },
+    "dependencies": {
+        "@types/mkdirp": "^1.0.0",
+        "mkdirp": "^1.0.4",
+        "@types/request": "^2.48.5",
+        "request": "^2.88.2",
+        "@types/request-promise": "^4.1.46",
+        "request-promise": "^4.2.5"
+    },
+    "peerDependencies": {
+        "@nrwl/workspace": "^9.2.2"
+    },
+    "files": [
+        "bucket.js",
+        "nx-cloud-onprem-client.js"
+    ]
+}
