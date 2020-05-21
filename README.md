@@ -40,3 +40,8 @@ If you deployed this into a server, change `http://localhost:3333` by your own s
 2. Go to `node_modules/.cache` folder and delete `nx`
 3. Run again the build command: `npm run nx -- build todos`
 4. You got message that inform you the build comes form cache
+
+# Next steps
+
+- Create docker image for the server
+- Publish the extension library
