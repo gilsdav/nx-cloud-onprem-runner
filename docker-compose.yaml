@@ -1,0 +1,9 @@
+version: "3.2"
+services:
+  back:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: gilsdav/nx-cloud-onprem
+    ports:
+    - "8080:3333"

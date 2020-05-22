@@ -1,6 +1,5 @@
 import { promisify } from 'util';
 import { createReadStream, writeFile } from 'fs';
-// import fetch from 'node-fetch';
 import request from 'request-promise';
 
 const writeFilePromise = promisify(writeFile);

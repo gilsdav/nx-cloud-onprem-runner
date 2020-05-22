@@ -1,11 +1,10 @@
 {
-    "name": "nx-cloud-onprem-runner",
-    "version": "1.0.0",
+    "name": "@gilsdav/nx-cloud-onprem-runner",
+    "version": "0.0.1",
     "description": "Remote caching for @nrwl/nx using on premise server",
     "main": "nx-cloud-onprem-client.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "prepare": "tsc"
+        "prepublishOnly": "tsc"
     },
     "repository": {
         "type": "git",

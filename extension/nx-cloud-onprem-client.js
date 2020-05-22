@@ -30,7 +30,7 @@ function runner(tasks, options, context) {
             await Promise.all(files.map(download));
             // Download commit file
             await download(commitFile); // commit file after we're sure all content is downloaded
-            console.log(`retrieved ${files.length + 1} files from cache gs://${bucket.name}/${hash}`);
+            console.log(`retrieved ${files.length + 1} files from cache ${bucket.name}/${hash}`);
             return true;
         }
         catch (e) {
@@ -39,9 +39,7 @@ function runner(tasks, options, context) {
             return false;
         }
         async function download(file) {
-            console.log('file.name', file.name);
             const destination = path_1.join(cacheDirectory, file.path);
-            console.log('dirname', path_1.dirname(destination));
             await mkdirp_1.default(path_1.dirname(destination));
             await bucket.download(file, destination);
         }
@@ -50,13 +48,11 @@ function runner(tasks, options, context) {
         const tasks = [];
         try {
             // Upload all files
-            console.log('hash', hash);
-            console.log('cacheDirectory', cacheDirectory);
             await uploadDirectory(path_1.join(cacheDirectory, hash));
             await Promise.all(tasks);
             // Upload commit file
             await bucket.upload(path_1.join(cacheDirectory, `${hash}.commit`), `${hash}.commit`); // commit file once we're sure all content is uploaded
-            console.log(`stored ${tasks.length + 1} files in cache gs://${bucket.name}/${hash}`);
+            console.log(`stored ${tasks.length + 1} files in cache ${bucket.name}/${hash}`);
             return true;
         }
         catch (e) {
@@ -64,7 +60,6 @@ function runner(tasks, options, context) {
             return false;
         }
         async function uploadDirectory(dir) {
-            console.log('dir', dir);
             for (const entry of await readdir(dir)) {
                 const full = path_1.join(dir, entry);
                 const stats = await stat(full);
@@ -72,9 +67,7 @@ function runner(tasks, options, context) {
                     await uploadDirectory(full);
                 }
                 else if (stats.isFile()) {
-                    // const destination = relative(cacheDirectory, full);
                     const destination = path_1.relative(cacheDirectory, dir);
-                    console.log('full', full, destination, entry);
                     tasks.push(bucket.upload(full, entry, destination));
                 }
             }

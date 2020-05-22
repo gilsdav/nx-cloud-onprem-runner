@@ -6,7 +6,7 @@
     "ng": "ng",
     "nx": "nx",
     "start": "nx serve nx-cloud-onprem",
-    "build": "ng build",
+    "build": "nx build nx-cloud-onprem --prod",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
