@@ -6,6 +6,8 @@ Decentralized NX cache.
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
+*Inspired by [nx-remotecache-gcs](https://github.com/wvanderdeijl/nx-remotecache-gcs)*
+
 ## Start Server
 
 1. Clone this git repository
